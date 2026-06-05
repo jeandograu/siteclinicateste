@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare Clinic</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <button id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-heartbeat"></i>
+            HealthCare
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#appointment">Appointment</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Health Is Our Priority</h1>
+
+            <p>
+                Professional healthcare services with experienced
+                doctors and modern medical technology.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#appointment" class="btn primary">
+                    Book Appointment
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=900"
+                 alt="Medical Team">
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+
+        <div class="about-grid">
+
+            <div class="card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Mission</h3>
+                <p>Deliver exceptional healthcare services.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-eye"></i>
+                <h3>Vision</h3>
+                <p>Become the most trusted healthcare provider.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-handshake"></i>
+                <h3>Values</h3>
+                <p>Integrity, compassion and innovation.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <i class="fas fa-user-doctor"></i>
+                <h3>General Practice</h3>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-baby"></i>
+                <h3>Pediatrics</h3>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-heart"></i>
+                <h3>Cardiology</h3>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-spa"></i>
+                <h3>Dermatology</h3>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-bone"></i>
+                <h3>Orthopedics</h3>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-flask"></i>
+                <h3>Laboratory Exams</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="doctors" class="doctors">
+        <h2>Our Doctors</h2>
+
+        <div class="doctor-grid">
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg">
+                <h3>Dr. John Smith</h3>
+                <p>Cardiologist</p>
+                <span>12 Years Experience</span>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/women/45.jpg">
+                <h3>Dr. Sarah Wilson</h3>
+                <p>Pediatrician</p>
+                <span>10 Years Experience</span>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/men/60.jpg">
+                <h3>Dr. Michael Brown</h3>
+                <p>Orthopedist</p>
+                <span>15 Years Experience</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="appointment" class="appointment">
+        <h2>Book Appointment</h2>
+
+        <form id="appointmentForm">
+
+            <input type="text" placeholder="Full Name" required>
+
+            <input type="email" placeholder="Email" required>
+
+            <input type="date" required>
+
+            <input type="time" required>
+
+            <button type="submit">
+                Schedule Appointment
+            </button>
+
+        </form>
+
+        <div id="successMessage"></div>
+    </section>
+
+    <section class="testimonials">
+        <h2>Testimonials</h2>
+
+        <div class="testimonial-card">
+            ⭐⭐⭐⭐⭐
+            <p>
+                Excellent service and caring staff.
+            </p>
+            <strong>Emily Johnson</strong>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+
+        <div class="contact-grid">
+
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+            </form>
+
+            <div class="contact-info">
+                <p>
+                    <i class="fas fa-phone"></i>
+                    +1 234 567 890
+                </p>
+
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    contact@clinic.com
+                </p>
+
+                <a class="whatsapp"
+                   href="#">
+                    WhatsApp
+                </a>
+
+                <iframe
+                    src="https://www.google.com/maps?q=New+York&output=embed">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 HealthCare Clinic</p>
+    </footer>
+
+    <div class="chatbot-btn">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chatbot">
+        <div class="chat-header">
+            AI Assistant
+        </div>
+
+        <div class="chat-body" id="chatBody">
+            Hello! How can I help?
+        </div>
+
+        <input
+            type="text"
+            id="chatInput"
+            placeholder="Ask something...">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
