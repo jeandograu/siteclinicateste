@@ -1,0 +1,124 @@
+// Appointment Form
+const appointmentForm = document.getElementById("appointmentForm");
+const successMessage = document.getElementById("successMessage");
+
+if (appointmentForm) {
+    appointmentForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        successMessage.textContent =
+            "Appointment scheduled successfully!";
+
+        appointmentForm.reset();
+    });
+}
+
+// Dark Mode
+const themeToggle = document.querySelector(".theme-toggle");
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+    });
+}
+
+// Back To Top
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTop.style.display = "flex";
+    } else {
+        backToTop.style.display = "none";
+    }
+});
+
+if (backToTop) {
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}
+
+// Chatbot
+const chatbotBtn = document.querySelector(".chatbot-btn");
+const chatbot = document.querySelector(".chatbot");
+const chatInput = document.getElementById("chatInput");
+const chatBody = document.getElementById("chatBody");
+
+if (chatbotBtn) {
+    chatbotBtn.addEventListener("click", () => {
+        chatbot.style.display =
+            chatbot.style.display === "block"
+                ? "none"
+                : "block";
+    });
+}
+
+function botReply(message) {
+    message = message.toLowerCase();
+
+    if (message.includes("appointment")) {
+        return "You can schedule an appointment using the form on this page.";
+    }
+
+    if (message.includes("phone")) {
+        return "You can contact us at +1 234 567 890.";
+    }
+
+    if (message.includes("hours")) {
+        return "We are open Monday to Friday from 8:00 AM to 6:00 PM.";
+    }
+
+    if (message.includes("services")) {
+        return "We offer General Practice, Pediatrics, Cardiology, Dermatology and more.";
+    }
+
+    return "I'm here to help. Please ask about appointments, services or contact information.";
+}
+
+if (chatInput) {
+    chatInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            const text = chatInput.value.trim();
+
+            if (!text) return;
+
+            chatBody.innerHTML += `
+                <p><strong>You:</strong> ${text}</p>
+            `;
+
+            const response = botReply(text);
+
+            setTimeout(() => {
+                chatBody.innerHTML += `
+                    <p><strong>Assistant:</strong> ${response}</p>
+                `;
+
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 500);
+
+            chatInput.value = "";
+        }
+    });
+}
+
+// Scroll Animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+});
+
+document.querySelectorAll("section").forEach((section) => {
+    section.style.opacity = "0";
+    section.style.transform = "translateY(30px)";
+    section.style.transition = "0.6s";
+
+    observer.observe(section);
+});
